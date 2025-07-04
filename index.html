@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agroindustrial Wanda - Taller, insumos y maquinaria agrícola.</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/js/swiffy-slider.min.js" defer crossorigin="anonymous"></script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/OBJLoader.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/MTLLoader.js"></script>
+ 
+  <link href="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/css/swiffy-slider.min.css" rel="stylesheet" crossorigin="anonymous" />
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: white;
+      overflow-x: hidden; /* Prevent horizontal scroll */
+    }
+    h2 {
+      font-weight: bold;
+    }
+    .navbar {
+      background-color: #000000;
+      flex-direction: column;
+      align-items: center;
+    }
+    .navbar-brand img {
+      display: block;
+      margin: auto;
+    }
+    .navbar-nav {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 10px;
+      flex-direction: row;
+    }
+    .nav-link {
+      color: white !important;
+      font-weight: bold;
+    }
+    .footer {
+      background-color: #ffffff;
+      color: black;
+      padding: 10px;
+      text-align: center;
+    }
+    .footer img {
+      width: 600px;
+      margin: 0 10px;
+    }
+    .copy {
+      background-color: #e42f30;
+      color: white;
+      padding: 10px;
+      text-align: center;
+    }
+    #modelo3d {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 50%; /* Model takes right half of the viewport */
+      height: 600px; /* Match the background section height (padding: 300px * 2) */
+      pointer-events: auto; /* Allow mouse interaction */
+    }
+    .background-section {
+      position: relative; /* Ensure the model is positioned relative to this section */
+      width: 100%;
+      overflow: hidden; /* Prevent overflow from causing scroll */
+    }
+  </style>
+</head>
+<body>
+  <!-- Modal 
+  <div class="modal fade" id="miPopup" tabindex="-1" aria-labelledby="miPopupLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content text-center">
+        <div class="modal-header">
+          <h5 class="modal-title" id="miPopupLabel">¡Atención!</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <h1 class="mt-3">❕</h1>
+        <div class="modal-body">
+          Por otros medios de pago, envío o compras de más de un producto, hacer click en "Consultar" y continuar el pedido por WhatsApp.
+        </div>
+        <div class="modal-footer"></div>
+      </div>
+    </div>
+  </div>-->
+
+  <nav class="navbar navbar-expand-lg navbar-custom">
+    <div class="container-fluid d-flex justify-content-between align-items-center">
+      <!-- Logo a la izquierda -->
+      <a class="navbar-brand fw-bold" id="inicio"><img src="logo.png" alt=""></a>
+
+      <!-- Links e iconos a la derecha -->
+      <div class="d-flex align-items-center">
+        <ul class="navbar-nav flex-row">
+          <li class="nav-item">
+            <a class="nav-link" href="#inicio">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#productos">Productos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#nosotros">Nosotros</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contacto">Contacto</a>
+          </li>
+        </ul>
+
+        <!-- Iconos sociales -->
+        <div class="social-icons d-flex align-items-center ms-3 gap-4">
+            <a class="nav-link" href="https://instagram.com/@agroindustrialwanda"><i class="bi bi-instagram"></i></a>
+            <a class="nav-link" href="https://wa.me/5493764101846"><i class="bi bi-whatsapp"></i></a>
+            <a class="nav-link" href="mailto:agrotaiw@hotmail.com"><i class="bi bi-envelope-fill"></i></a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Inicio -->
+  <a href="#"><div class="background-section" style="background-image: url('img/plantacion.png'); background-size: cover; background-position: center; width: 100%; padding: 300px 0; ">
+    <!-- El 3d obj debe ir sobre la imagen (esta quedará de fondo, por lo que el fondo del modelo debe be transparente) -->
+    <div id="modelo3d"></div>
+  </div></a>
+  <br>
+  <br>
+  <br>
+
+  <!-- Productos -->
+  <div class="container mt-4">
+    <h2 class="text-center">Productos</h2>
+    <div id="productos" class="row"></div>
+  </div>
+
+  <br>
+  <br>
+  <br>
+
+
+<!-- Catalogo -->
+  <div class="container mt-4">
+    <h2 class="text-center">Descargá nuestro catálogo completo</h2>
+    <center><a href="./aw-catalogo-jul25.pdf" target="_blank" class="btn btn-secondary">
+      <i class=""></i>Descargar (.pdf)</a></center>
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+
+
+  <!-- Sobre mí -->
+  <div style="background-image: url('img/negocio.png'); background-size: cover; background-position: center; width: 100%; padding: 60px 0;">
+    <div class="container" id="nosotros" style="background-color: rgba(0, 0, 0, 0.5); padding: 40px; border-radius: 10px;">
+      <h2 class="text-center text-white"></h2>
+      <div style="display: flex; align-items: flex-start; gap: 20px;">
+        <img src="img/profile.png" alt="" style="width: 200px; height: auto; border-radius: 10px;" />
+        <div style="color: white;">
+          <h4 style="font-weight: light">Somos <b>Agroindustrial Wanda,</b></h4>
+          <p>
+            <b>Una empresa familiar</b> de Wanda, Misiones con más de 30 años de experiencia en la fabricación de maquinaria para el agro, brindando una atención personalizada
+            a todos nuestros clientes. <em>Compromiso, dedicación y calidad</em> son nuestros pilares.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <br/>
+
+  <!-- Ubicación y contacto -->
+  <div class="container my-5" id="contacto">
+    <h2 class="text-center mb-4">Contacto</h2>
+    <div class="row align-items-start">
+      <!-- Columna de texto -->
+      <div class="col-md-6 mb-4">
+        <div class="col-md-12 mb-4">
+          <h4>Nos encontramos en:</h4>
+          <p>Ruta 12 KM 1591, Barrio Industrial, Wanda, Misiones.</p>
+          <br>
+          <h4>Horarios de atención:</h4>
+          <p>Lunes a viernes de 8:00 a 17:00 hs</p>
+          <br>
+          <h4>Teléfono:</h4>
+          <p>+54 9 3764-101846</p>
+          <p>+54 9 3757-676550</p>
+          <br>
+          <h4 style="font-weight: bold;">¡Te esperamos!</h4>
+        </div>
+        <div class="d-flex gap-4 my-4">
+          <a href="https://wa.me/5493764101846" target="_blank">
+            <i class="bi bi-whatsapp fs-1" style="color: #e42f30;"></i>
+          </a>
+          <a href="https://instagram.com/@agroindustrialwanda" target="_blank">
+            <i class="bi bi-instagram fs-1" style="color: #e42f30;"></i>
+          </a>
+          <a href="mailto:agrotaiw@hotmail.com">
+            <i class="bi bi-envelope fs-1" style="color: #e42f30;"></i>
+          </a>
+        </div>
+        <br>
+        <br>
+      </div>
+      <!-- Columna del mapa -->
+      <div class="col-md-6">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5211.843015831254!2d-54.58592410673509!3d-25.98889865485263!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94f6e3d3b5c27b5f%3A0xcf39be992a08ae5f!2sAgro%20Industrial%20Wanda!5e0!3m2!1ses!2sar!4v1748281553136!5m2!1ses!2sar" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer final -->
+  <section class="copy">
+    <p>Agroindustrial Wanda © 2025 - Todos los derechos reservados.</p>
+    <p>Desarrollado por <b>kevynrdz</b></p>
+  </section>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    async function cargarProductos() {
+      const response = await fetch('productos.json');
+      const productos = await response.json();
+      let html = '';
+      productos.forEach(prod => {
+        html += `
+          <div class="col-md-4 mb-4">
+            <div class="card border-0">
+              <img src="${prod.imagen}" class="card-img-top" alt="${prod.titulo}">
+              <div class="card-body">
+                <h6 class="card-title">${prod.titulo}</h6>
+                <h5 class="card-text"><b></b></h5>
+                <h6 class="fw-bold">${prod.stock > 0 ? 'Disponible' : 'Sin Stock'}</h6>
+                <div class="d-flex flex-column gap-2">
+                  <a href="${prod.url_whatsapp}" target="_blank" class="btn btn-success ${prod.whatsapp ? '' : 'disabled'}">
+                    <i class="bi bi-whatsapp"></i> Consultar
+                  </a>
+                  <a href="${prod.url_mercadopago}" target="_blank" class="btn btn-secondary ${prod.mercadopago ? '' : 'disabled'}">
+                    <i class="bi bi-cart"></i> Ver en MercadoLibre
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>`;
+      });
+      document.getElementById('productos').innerHTML = html;
+    }
+    cargarProductos();
+
+    window.addEventListener('load', function () {
+      var popup = new bootstrap.Modal(document.getElementById('miPopup'));
+      // popup.show(); // Uncomment if you want the popup to show on load
+    });
+
+    // Escena y cámara
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / 2 / 600, 0.1, 1000); // Aspect ratio for 50% width
+    camera.position.z = 5;
+
+    // Renderizador
+    const renderer = new THREE.WebGLRenderer({ alpha: true });
+    const modelContainer = document.getElementById("modelo3d");
+    renderer.setSize(modelContainer.clientWidth, modelContainer.clientHeight); // Match container size
+    renderer.setClearColor(0x000000, 0); // Fondo transparente
+    modelContainer.appendChild(renderer.domElement);
+
+    // Luz
+    const light = new THREE.DirectionalLight(0xffffff, 1);
+    light.position.set(1, 1, 1).normalize();
+    scene.add(light);
+
+    // Controles de órbita
+    const controls = new THREE.OrbitControls(camera, renderer.domElement);
+    controls.enableRotate = true; // Habilitar rotación
+    controls.enableZoom = false; // Deshabilitar zoom
+    controls.enablePan = false; // Deshabilitar panning
+    controls.rotateSpeed = 1.0; // Velocidad de rotación
+    controls.enableDamping = true; // Suavizar el movimiento
+    controls.dampingFactor = 0.1; // Factor de amortiguación
+
+    // Cargar materiales .mtl primero
+    const mtlLoader = new THREE.MTLLoader();
+    mtlLoader.setPath('modelos/'); // Reemplazá con tu carpeta
+    mtlLoader.load('modelo.mtl', function(materials) {
+      materials.preload();
+
+      const objLoader = new THREE.OBJLoader();
+      objLoader.setMaterials(materials);
+      objLoader.setPath('modelos/');
+      objLoader.load('modelo.obj', function(object) {
+        object.scale.set(1, 1, 1);
+        object.position.y = -1;
+        scene.add(object);
+      });
+    });
+
+    // Animación
+    function animate() {
+      requestAnimationFrame(animate);
+      controls.update(); // Actualizar los controles en cada frame
+      renderer.render(scene, camera);
+    }
+    animate();
+
+    // Ajuste en caso de cambio de tamaño
+    window.addEventListener('resize', () => {
+      const width = modelContainer.clientWidth;
+      const height = modelContainer.clientHeight;
+      camera.aspect = width / height;
+      camera.updateProjectionMatrix();
+      renderer.setSize(width, height);
+    });
+  </script>
+</body>
+</html>

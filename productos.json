@@ -1,0 +1,56 @@
+[
+    {
+        "titulo": "Tractor Roland 25HP",
+        "imagen": "./img/roland-h025.jpg",
+        "whatsapp": 1,
+        "mercadopago": 0,
+        "stock": 1,
+        "url_whatsapp": "https://wa.me/5493764101846",
+        "url_mercadopago": "#"
+    },
+    {
+        "titulo": "Tractor Roland 60HP",
+        "imagen": "./img/roland-h060.jpg",
+        "whatsapp": 1,
+        "mercadopago": 0,
+        "stock": 3,
+        "url_whatsapp": "https://wa.me/5493764101846",
+        "url_mercadopago": "#"
+    },
+    {
+        "titulo": "Tractor Roland 70HP",
+        "imagen": "./img/roland-h070.jpg",
+        "whatsapp": 1,
+        "mercadopago": 0,
+        "stock": 1,
+        "url_whatsapp": "https://wa.me/5493764101846",
+        "url_mercadopago": "#"
+    },
+    {
+        "titulo": "Motocortadora Roland RH001 Evo",
+        "imagen": "./img/motocortadora-rh001.jpg",
+        "whatsapp": 1,
+        "mercadopago": 0,
+        "stock": 1,
+        "url_whatsapp": "https://wa.me/5493764101846",
+        "url_mercadopago": "#"
+    },
+    {
+        "titulo": "Motocortadora Roland RH102",
+        "imagen": "./img/motocortadora-rh102.jpg",
+        "whatsapp": 1,
+        "mercadopago": 0,
+        "stock": 3,
+        "url_whatsapp": "https://wa.me/5493764101846",
+        "url_mercadopago": "#"
+    },
+    {
+        "titulo": "Desmalezadora Interfilar M140",
+        "imagen": "./img/desmalezadora-m140-2.jpg",
+        "whatsapp": 1,
+        "mercadopago": 1,
+        "stock": 1,
+        "url_whatsapp": "https://wa.me/5493764101846",
+        "url_mercadopago": "#"
+    }
+]
