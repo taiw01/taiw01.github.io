@@ -136,13 +136,13 @@
 
   <!-- Inicio -->
   <a href="#">
-  <div class="background-section" style="background-image: url('img/plantacion.png'); background-size: cover; background-position: center; width: 100%; padding: 300px 0; "></a>
+  <div class="background-section" style="background-image: url('img/plantacion.png'); background-size: cover; background-position: center; width: 100%; padding: 200px 0; "></a>
     <!-- El 3d obj debe ir sobre la imagen (esta quedará de fondo, por lo que el fondo del modelo debe be transparente) -->
   <div style="padding-left:6%;">
     <h4 style="color: white;">Conocé nuestra</h4>
-    <h3 style="font-weight: 600; color: white;">DESMALEZADORA <br>INTERFILAR</h3>
-    <h1 style="font-weight: 900; color: white;">M140</h1>
-    <h1 style="font-weight: 900; color: white;">⟶</h1>
+    <h3 style="font-weight: 600; font-size: 40px; color: white;">DESMALEZADORA <br>INTERFILAR</h3>
+    <h1 style="font-weight: 900; font-size: 40px; color: white;">M140</h1>
+    <h1 style="font-weight: 900; font-size: 40px; color: white;">⟶</h1>
   </div>
   <div id="modelo3d"></div>
   </div>
@@ -277,7 +277,7 @@
 
     // Escena y cámara
     const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / 2 / 400, 0.1, 1000); // Aspect ratio for 50% width
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / 2 / 300, 0.1, 1000); // Aspect ratio for 50% width
     camera.position.z = 5;
 
     // Renderizador
