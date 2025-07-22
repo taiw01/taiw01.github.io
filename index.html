@@ -63,9 +63,10 @@
       position: absolute;
       top: 0;
       right: 0;
-      width: 50%; /* Model takes right half of the viewport */
-      height: 600px; /* Match the background section height (padding: 300px * 2) */
-      pointer-events: auto; /* Allow mouse interaction */
+      padding-right: 10%;
+      width: 100%; /* Modelo ocupa la mitad derecha del viewport */
+      height: 100%; /* Match the background section height (padding: 300px * 2) */
+      pointer-events: auto; /* Permitimos interacción del mouse */
     }
     .background-section {
       position: relative; /* Ensure the model is positioned relative to this section */
@@ -92,43 +93,59 @@
     </div>
   </div>-->
 
-  <nav class="navbar navbar-expand-lg navbar-custom">
-    <div class="container-fluid d-flex justify-content-between align-items-center">
-      <!-- Logo a la izquierda -->
-      <a class="navbar-brand fw-bold" id="inicio"><img src="logo.png" alt=""></a>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <!-- Logo -->
+    <a class="navbar-brand fw-bold" id="inicio">
+      <img src="logo.png" alt="" style="height: 40px;">
+    </a>
 
-      <!-- Links e iconos a la derecha -->
-      <div class="d-flex align-items-center">
-        <ul class="navbar-nav flex-row">
-          <li class="nav-item">
-            <a class="nav-link" href="#inicio">Inicio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#productos">Productos</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#nosotros">Nosotros</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#contacto">Contacto</a>
-          </li>
-        </ul>
+    <!-- Botón Burger -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+      aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-        <!-- Iconos sociales -->
-        <div class="social-icons d-flex align-items-center ms-3 gap-4">
-            <a class="nav-link" href="https://instagram.com/@agroindustrialwanda"><i class="bi bi-instagram"></i></a>
-            <a class="nav-link" href="https://wa.me/5493764101846"><i class="bi bi-whatsapp"></i></a>
-            <a class="nav-link" href="mailto:agrotaiw@hotmail.com"><i class="bi bi-envelope-fill"></i></a>
-        </div>
+    <!-- Contenido del menú -->
+    <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
+      <ul class="navbar-nav me-3 mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="#inicio">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#productos">Productos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#nosotros">Nosotros</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contacto">Contacto</a>
+        </li>
+      </ul>
+
+      <!-- Íconos sociales -->
+      <div class="d-flex gap-3">
+        <a class="nav-link" href="https://instagram.com/agroindustrialwanda"><i class="bi bi-instagram"></i></a>
+        <a class="nav-link" href="https://wa.me/5493764101846"><i class="bi bi-whatsapp"></i></a>
+        <a class="nav-link" href="mailto:agrotaiw@hotmail.com"><i class="bi bi-envelope-fill"></i></a>
       </div>
     </div>
-  </nav>
+  </div>
+</nav>
+
 
   <!-- Inicio -->
-  <a href="#"><div class="background-section" style="background-image: url('img/plantacion.png'); background-size: cover; background-position: center; width: 100%; padding: 300px 0; ">
+  <a href="#">
+  <div class="background-section" style="background-image: url('img/plantacion.png'); background-size: cover; background-position: center; width: 100%; padding: 300px 0; "></a>
     <!-- El 3d obj debe ir sobre la imagen (esta quedará de fondo, por lo que el fondo del modelo debe be transparente) -->
-    <div id="modelo3d"></div>
-  </div></a>
+  <div style="padding-left:6%;">
+    <h4 style="color: white;">Conocé nuestra</h4>
+    <h3 style="font-weight: 600; color: white;">DESMALEZADORA <br>INTERFILAR</h3>
+    <h1 style="font-weight: 900; color: white;">M140</h1>
+    <h1 style="font-weight: 900; color: white;">⟶</h1>
+  </div>
+  <div id="modelo3d"></div>
+  </div>
   <br>
   <br>
   <br>
@@ -198,7 +215,7 @@
           <a href="https://wa.me/5493764101846" target="_blank">
             <i class="bi bi-whatsapp fs-1" style="color: #e42f30;"></i>
           </a>
-          <a href="https://instagram.com/@agroindustrialwanda" target="_blank">
+          <a href="https://instagram.com/agroindustrialwanda" target="_blank">
             <i class="bi bi-instagram fs-1" style="color: #e42f30;"></i>
           </a>
           <a href="mailto:agrotaiw@hotmail.com">
@@ -217,8 +234,8 @@
 
   <!-- Footer final -->
   <section class="copy">
-    <p>Agroindustrial Wanda © 2025 - Todos los derechos reservados.</p>
-    <p>Desarrollado por <b>kevynrdz</b></p>
+    <p style="font-weight: bold;">Agroindustrial Wanda © 2025 - Todos los derechos reservados.</p>
+    <p style="font-weight: light;">Diseñado y desarrollado por <b>Bx</b></p>
   </section>
 
   <!-- Scripts -->
@@ -241,9 +258,9 @@
                   <a href="${prod.url_whatsapp}" target="_blank" class="btn btn-success ${prod.whatsapp ? '' : 'disabled'}">
                     <i class="bi bi-whatsapp"></i> Consultar
                   </a>
-                  <a href="${prod.url_mercadopago}" target="_blank" class="btn btn-secondary ${prod.mercadopago ? '' : 'disabled'}">
+                  <!--<a href="${prod.url_mercadopago}" target="_blank" class="btn btn-secondary ${prod.mercadopago ? '' : 'disabled'}">
                     <i class="bi bi-cart"></i> Ver en MercadoLibre
-                  </a>
+                  </a>-->
                 </div>
               </div>
             </div>
@@ -260,7 +277,7 @@
 
     // Escena y cámara
     const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / 2 / 600, 0.1, 1000); // Aspect ratio for 50% width
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / 2 / 400, 0.1, 1000); // Aspect ratio for 50% width
     camera.position.z = 5;
 
     // Renderizador
@@ -294,7 +311,7 @@
       objLoader.setMaterials(materials);
       objLoader.setPath('modelos/');
       objLoader.load('modelo.obj', function(object) {
-        object.scale.set(1, 1, 1);
+        object.scale.set(0.9, 0.9, 0.9);
         object.position.y = -1;
         scene.add(object);
       });
