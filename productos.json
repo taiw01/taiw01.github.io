@@ -1,6 +1,33 @@
 [
     {
-        "titulo": "Tractor Roland 25HP",
+        "titulo": "Desmalezadora Interfilar M140",
+        "imagen": "./img/desmalezadora-m140-2.jpg",
+        "whatsapp": 1,
+        "mercadopago": 0,
+        "stock": 1,
+        "url_whatsapp": "https://wa.me/5493764101846",
+        "url_mercadopago": "#"
+    },
+    {
+        "titulo": "Rastra Hidráulica 14 Discos",
+        "imagen": "./img/rastra-hidr-14d.jpeg",
+        "whatsapp": 1,
+        "mercadopago": 0,
+        "stock": 1,
+        "url_whatsapp": "https://wa.me/5493764101846",
+        "url_mercadopago": "#"
+    },
+    {
+        "titulo": "Rastra 10 Discos",
+        "imagen": "./img/rastra-10d-2.jpeg",
+        "whatsapp": 1,
+        "mercadopago": 0,
+        "stock": 1,
+        "url_whatsapp": "https://wa.me/5493764101846",
+        "url_mercadopago": "#"
+    },
+    {
+        "titulo": "Tractor Roland RH025 25HP",
         "imagen": "./img/roland-h025.jpg",
         "whatsapp": 1,
         "mercadopago": 0,
@@ -9,7 +36,16 @@
         "url_mercadopago": "#"
     },
     {
-        "titulo": "Tractor Roland 60HP",
+        "titulo": "Tractor Roland RH040 40HP",
+        "imagen": "./img/roland-h040.jpg",
+        "whatsapp": 1,
+        "mercadopago": 0,
+        "stock": 1,
+        "url_whatsapp": "https://wa.me/5493764101846",
+        "url_mercadopago": "#"
+    },
+    {
+        "titulo": "Tractor Roland RH060 60HP",
         "imagen": "./img/roland-h060.jpg",
         "whatsapp": 1,
         "mercadopago": 0,
@@ -18,7 +54,7 @@
         "url_mercadopago": "#"
     },
     {
-        "titulo": "Tractor Roland 70HP",
+        "titulo": "Tractor Roland RH070 70HP",
         "imagen": "./img/roland-h070.jpg",
         "whatsapp": 1,
         "mercadopago": 0,
@@ -27,7 +63,7 @@
         "url_mercadopago": "#"
     },
     {
-        "titulo": "Motocortadora Roland RH001 Evo",
+        "titulo": "Motocortadora Roland RH001 EVO",
         "imagen": "./img/motocortadora-rh001.jpg",
         "whatsapp": 1,
         "mercadopago": 0,
@@ -41,15 +77,6 @@
         "whatsapp": 1,
         "mercadopago": 0,
         "stock": 3,
-        "url_whatsapp": "https://wa.me/5493764101846",
-        "url_mercadopago": "#"
-    },
-    {
-        "titulo": "Desmalezadora Interfilar M140",
-        "imagen": "./img/desmalezadora-m140-2.jpg",
-        "whatsapp": 1,
-        "mercadopago": 0,
-        "stock": 1,
         "url_whatsapp": "https://wa.me/5493764101846",
         "url_mercadopago": "#"
     }

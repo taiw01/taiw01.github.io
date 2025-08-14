@@ -76,7 +76,7 @@
   </style>
 </head>
 <body>
-  <!-- Modal 
+  <!-- Modal -->
   <div class="modal fade" id="miPopup" tabindex="-1" aria-labelledby="miPopupLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content text-center">
@@ -84,14 +84,15 @@
           <h5 class="modal-title" id="miPopupLabel">¡Atención!</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
         </div>
-        <h1 class="mt-3">❕</h1>
+        <img src="img/bna-promo.jpg" alt="">
         <div class="modal-body">
-          Por otros medios de pago, envío o compras de más de un producto, hacer click en "Consultar" y continuar el pedido por WhatsApp.
+          Para más detalles consultanos por WhatsApp.
+          <a href="https://wa.me/5493764101846" target="_blank" class="btn btn-success">Consultar <i class="bi bi-whatsapp"></i></a>
         </div>
         <div class="modal-footer"></div>
       </div>
     </div>
-  </div>-->
+  </div>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
@@ -153,6 +154,7 @@
   <!-- Productos -->
   <div class="container mt-4">
     <h2 class="text-center">Productos</h2>
+    <br>
     <div id="productos" class="row"></div>
   </div>
 
@@ -164,7 +166,7 @@
 <!-- Catalogo -->
   <div class="container mt-4">
     <h2 class="text-center">Descargá nuestro catálogo completo</h2>
-    <center><a href="./aw-catalogo-jul25.pdf" target="_blank" class="btn btn-secondary">
+    <center><a href="./aw-catalogo-ago25.pdf" target="_blank" class="btn btn-secondary">
       <i class=""></i>Descargar (.pdf)</a></center>
   </div>
   <br>
@@ -272,7 +274,7 @@
 
     window.addEventListener('load', function () {
       var popup = new bootstrap.Modal(document.getElementById('miPopup'));
-      // popup.show(); // Uncomment if you want the popup to show on load
+      popup.show(); // Uncomment if you want the popup to show on load
     });
 
     // Escena y cámara
